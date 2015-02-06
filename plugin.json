@@ -1,0 +1,14 @@
+{
+	"id": "nodebb-plugin-sso-ibmcloud",
+	"name": "NodeBB IBM Connections Cloud SSO",
+	"description": "NodeBB Plugin that allows users to login/register via their IBM Connections Cloud account.",
+	"url": "https://github.com/benkroeger/nodebb-plugin-sso-ibm-connections-cloud",
+	"library": "./library.js",
+	"templates": "templates",
+	"hooks": [
+		{ "hook": "static:app.load", "method": "init" },
+		{ "hook": "filter:auth.init", "method": "getStrategy" },
+		{ "hook": "filter:admin.header.build", "method": "addMenuItem" },
+		{ "hook": "filter:user.delete", "method": "deleteUserData" }
+	]
+}
